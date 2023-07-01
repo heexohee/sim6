@@ -12,9 +12,22 @@ const boxStyle = {
   alignItems: "center",
 };
 
-function Box1() {
+function Box1({initCount}) {
   console.log("Box1이 렌더링되었습니다.");
-  return <div style={boxStyle}>Box1</div>;
+  return (
+    <div style={boxStyle}>
+      <button
+        onClick={() => {
+          initCount();
+        }}
+      >
+        초기화
+      </button>
+    </div>
+  );
 }
 
 export default React.memo(Box1);
+
+//초기화해주는 함수는 box1에서 관리하는 것이 아니라,
+// App.js에서 작성해서 관리, 그 안에 useState가 있기 때문.

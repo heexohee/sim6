@@ -18,3 +18,4 @@ function Box3() {
 }
 
 export default React.memo(Box3);
+
